@@ -39,7 +39,7 @@ alien_x_change = []
 alien_y_change = []
 num_of_enemies = 6
 
-for i in range(num_of_enemies):
+for _ in range(num_of_enemies):
     alien_image.append(pygame.image.load("assests/alien_enemy.png"))
     alien_x.append(random.randrange(0, 800))
     alien_y.append(random.randrange(50, 150))
@@ -99,10 +99,7 @@ def isCollision(alien_x, alien_y, laser_x, laser_y):
     distance = math.sqrt(
         math.pow(alien_x - laser_x, 2) + math.pow(alien_y - laser_y, 2)
     )
-    if distance < 27:
-        return True
-    else:
-        return False
+    return distance < 27
 
 
 # Game Loop
