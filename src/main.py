@@ -131,9 +131,11 @@ while running:
                 laser_x = player_x
                 shoot_laser(laser_x, laser_y)
 
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                player_x_change = 0
+        if event.type == pygame.KEYUP and event.key in [
+            pygame.K_LEFT,
+            pygame.K_RIGHT,
+        ]:
+            player_x_change = 0
 
     # Draw with the following colors
     # screen.fill((5, 0, 0))
